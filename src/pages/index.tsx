@@ -1,12 +1,12 @@
 import Head from "next/head";
 import Image from "next/image";
 
-import { Header } from "./components/Header";
-import BorderSvg from "./svg/border";
-import { HomeSection } from "./components/HomeSection";
+import { Header } from "@/components/Header";
+import BorderSvg from "@/svg/border";
+import { HomeSection } from "@/components/HomeSection";
 import Link from "next/link";
-import { ProjectsSections } from "./components/ProjectsSections";
-import { Footer } from "./components/Footer";
+import { ProjectsSections } from "@/components/ProjectsSections";
+import { Footer } from "@/components/Footer";
 import { useState } from "react";
 // import Image from "next/image";
 // import { Inter } from "next/font/google";

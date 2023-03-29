@@ -1,6 +1,6 @@
 import Image from "next/image";
-import BorderSvg from "@/pages/svg/border";
-import ArrowRightSvg from "@/pages/svg/arrowRight";
+import BorderSvg from "@/svg/border";
+import ArrowRightSvg from "@/svg/arrowRight";
 import Link from "next/link";
 
 const LINKS = [

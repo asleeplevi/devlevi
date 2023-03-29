@@ -39,9 +39,9 @@ export const HomeSection = () => {
           adora criar soluções <b>inovadoras</b> que atendam aos seus propósitos
           com <b>excelência</b>.
         </p>
-        <button className="mt-8 flex items-center gap-2">
+        <Link href="/about" className="mt-8 flex items-center gap-2">
           Saiba mais sobre mim <ArrowRightSvg />{" "}
-        </button>
+        </Link>
       </div>
       <div className="w-full p-4 rounded-lg mt-8 relative backdrop-blur-md overflow-hidden">
         <div className=" w-full opacity-10 left-0 top-0 h-full absolute bg-[linear-gradient(to_right,rgba(0,0,0,.4),rgba(0,0,0,.4)),url(/noise.svg)]" />

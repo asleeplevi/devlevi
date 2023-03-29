@@ -2,6 +2,7 @@ import Image from "next/image";
 import BorderSvg from "@/svg/border";
 import ArrowRightSvg from "@/svg/arrowRight";
 import Link from "next/link";
+import LinkSvg from "@/svg/link";
 
 const LINKS = [
   {
@@ -71,12 +72,11 @@ export const HomeSection = () => {
                   />
                 </button>
                 <Link href={link.url} target="_blank">
-                  <Image
-                    src="/link.svg"
-                    alt="linkedin icon"
+                  <LinkSvg
                     width={16}
                     height={16}
-                    className="fill-red"
+                    fill="#7A787A"
+                    className="rotate-45"
                   />
                 </Link>
               </div>

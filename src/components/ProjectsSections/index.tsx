@@ -65,7 +65,7 @@ export const ProjectsSections = () => {
                 <Link
                   href={post.preview}
                   target="_blank"
-                  className="bg-white/20 rounded-full flex items-center justify-center w-[45px] h-[45px]"
+                  className="bg-white/20 rounded-full flex items-center justify-center w-[45px] h-[45px] rotate-45"
                 >
                   <LinkSvg width={25} height={25} />
                 </Link>

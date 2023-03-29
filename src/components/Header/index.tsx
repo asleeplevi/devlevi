@@ -1,4 +1,4 @@
-import LogoSvg from "@/pages/svg/logo";
+import LogoSvg from "@/svg/logo";
 import clsx from "clsx";
 
 export const Header = ({ activeLanguage }: { activeLanguage: string }) => {

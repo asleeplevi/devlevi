@@ -1,10 +1,6 @@
 import Head from "next/head";
-import Image from "next/image";
-
 import { Header } from "@/components/Header";
-import BorderSvg from "@/svg/border";
 import { HomeSection } from "@/components/HomeSection";
-import Link from "next/link";
 import { ProjectsSections } from "@/components/ProjectsSections";
 import { Footer } from "@/components/Footer";
 
@@ -25,11 +21,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        {/* <Background /> */}
-      <main>
-        {/* <Background /> */}
         <Header activeLanguage={activeLanguage} />
-        <section className="relative">
         <section className="relative">
           <HomeSection />
         </section>

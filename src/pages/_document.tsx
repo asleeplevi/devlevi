@@ -1,5 +1,5 @@
 import { Html, Head, Main, NextScript } from "next/document";
-import { Background } from "./components/Background";
+import { Background } from "@/components/Background";
 
 export default function Document() {
   return (

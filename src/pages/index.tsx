@@ -26,7 +26,10 @@ export default function Home() {
       </Head>
       <main>
         {/* <Background /> */}
+      <main>
+        {/* <Background /> */}
         <Header activeLanguage={activeLanguage} />
+        <section className="relative">
         <section className="relative">
           <HomeSection />
         </section>

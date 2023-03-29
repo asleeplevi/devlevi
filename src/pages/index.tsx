@@ -4,7 +4,6 @@ import { HomeSection } from "./components/HomeSection";
 import { ProjectsSections } from "./components/ProjectsSections";
 import { Footer } from "./components/Footer";
 import { useState } from "react";
-import { Background } from "./components/Background";
 // import Image from "next/image";
 // import { Inter } from "next/font/google";
 
@@ -21,7 +20,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Background />
+        {/* <Background /> */}
         <Header activeLanguage={activeLanguage} />
         <section className="relative">
           <HomeSection />

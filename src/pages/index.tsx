@@ -1,12 +1,9 @@
 import Head from "next/head";
-import Image from "next/image";
-
 import { Header } from "@/components/Header";
-import BorderSvg from "@/svg/border";
 import { HomeSection } from "@/components/HomeSection";
-import Link from "next/link";
 import { ProjectsSections } from "@/components/ProjectsSections";
 import { Footer } from "@/components/Footer";
+
 import { useState } from "react";
 // import Image from "next/image";
 // import { Inter } from "next/font/google";
@@ -23,9 +20,9 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className=" bg-[url('/grid-pattern.svg')] animate-grid">
+      <main>
         <Header activeLanguage={activeLanguage} />
-        <section className="bg-[url('/waves.svg')] bg-[0%] bg-no-repeat w-full h-[60vh] ">
+        <section className="relative">
           <HomeSection />
         </section>
         <section className="bg-main pb-60">

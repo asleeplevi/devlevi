@@ -7,5 +7,5 @@ you can see here the [figma project](https://www.figma.com/file/JAXHM9H2Hh7mkIC6
 - [x] Home section
 - [x] Projects Section
 - [x] About Page 
-- [ ] Add Micro Interactions
+- [x] Add Micro Interactions
 - [ ] Add multi language support

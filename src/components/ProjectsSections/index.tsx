@@ -23,7 +23,7 @@ const POSTS = [
 
 export const ProjectsSections = () => {
   return (
-    <div className="container max-w-3xl px-4">
+    <div className="container max-w-3xl px-4 mt-40">
       <h4 className="text-sm font-bold text-grey">Meus projetos</h4>
       <ul className=" mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 gap-y-8">
         {POSTS.map((post) => (
@@ -58,7 +58,11 @@ export const ProjectsSections = () => {
                   target="_blank"
                   className="bg-white/20 rounded-full flex items-center justify-center w-[45px] h-[45px]"
                 >
-                  <GithubSvg />
+                  <GithubSvg
+                    width={25}
+                    height={25}
+                    className="relative -left-[1px]"
+                  />
                 </Link>
               )}
               {post.preview && (

@@ -11,8 +11,14 @@ export default function About() {
       <div className="w-full max-w-3xl mx-auto relative">
         <section className="w-full h-full bg-main border border-grey rounded-lg p-8 mb-8">
           <header className="mb-2">
-            <Link href="/">
-              <ArrowRightSvg className="rotate-180" />
+            <Link
+              href="/"
+              className="transition-all group hover:-left-2 left-0  relative flex items-center gap-1.5 w-fit"
+            >
+              <ArrowRightSvg className=" rotate-180 " />
+              <p className="transition-all group-hover:opacity-100 opacity-0 text-sm">
+                Ir para home
+              </p>
             </Link>
           </header>
           <h2 className="font-bold text-2xl my-5">

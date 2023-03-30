@@ -7,12 +7,12 @@ function ArrowRightSvg(props: ArrowRightSvgProps) {
       xmlns="http://www.w3.org/2000/svg"
       width="16"
       height="16"
-      fill="none"
       viewBox="0 0 16 16"
       {...props}
+      fill="none"
     >
       <path
-        stroke="#E6E6E6"
+        stroke={props.fill || "currentColor"}
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeMiterlimit="10"

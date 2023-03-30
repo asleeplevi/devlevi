@@ -6,6 +6,6 @@ you can see here the [figma project](https://www.figma.com/file/JAXHM9H2Hh7mkIC6
 ## steps
 - [x] Home section
 - [x] Projects Section
-- [ ] About modal
+- [x] About Page 
 - [ ] Add Micro Interactions
 - [ ] Add multi language support

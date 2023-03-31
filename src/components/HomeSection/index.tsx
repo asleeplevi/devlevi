@@ -4,33 +4,36 @@ import ArrowRightSvg from "@/svg/arrowRight";
 import Link from "next/link";
 import LinkSvg from "@/svg/link";
 import { MouseEvent, useRef, useState } from "react";
-
-const LINKS = [
-  {
-    icon: "/linkedin.svg",
-    title: "linkedin/in/levi-me",
-    url: "https://linkedin.com/in/levi-me",
-  },
-  {
-    icon: "/github.svg",
-    title: "github.com/asleeplevi",
-    url: "https://github.com/asleeplevi",
-  },
-  {
-    icon: "/email.svg",
-    title: "contato@devlevi.com",
-    url: "mailto:contato@devlevi.com",
-  },
-  {
-    icon: "/resume.svg",
-    title: "meu currículo",
-    url: "resume",
-  },
-];
+import { useTranslation } from "next-i18next";
 
 export const HomeSection = () => {
+  const { t } = useTranslation();
+
   const [{ x, y }, setMousePosition] = useState({ x: 0, y: 0 });
   const cardRef = useRef<HTMLDivElement>(null);
+
+  const LINKS = [
+    {
+      icon: "/linkedin.svg",
+      title: "linkedin/in/levi-me",
+      url: "https://linkedin.com/in/levi-me",
+    },
+    {
+      icon: "/github.svg",
+      title: "github.com/asleeplevi",
+      url: "https://github.com/asleeplevi",
+    },
+    {
+      icon: "/email.svg",
+      title: "contato@devlevi.com",
+      url: "mailto:contato@devlevi.com",
+    },
+    {
+      icon: "/resume.svg",
+      title: t("my-resume"),
+      url: "resume",
+    },
+  ];
 
   function onMouseMove(event: MouseEvent) {
     const cardDetails = cardRef.current?.getBoundingClientRect()!;
@@ -49,21 +52,20 @@ export const HomeSection = () => {
 
   return (
     <div className="flex flex-col md:flex-row items-center container px-4 mt-20 gap-4 max-w-3xl relative">
-      <div>
-        <span className="max-w-sm">Olá 🖖</span>
+      <div className="max-w-sm">
+        <span className="max-w-sm">{t("hello")} 🖖</span>
         <h1 className="text-5xl font-bold my-1">
-          Eu sou <span className="text-primary">Levi</span>
+          {t("i-am")} <span className="text-primary">Levi</span>
         </h1>
         <p className="text-sm ">
-          Um desenvolvedor fullstack apaixonado pelo universo do Javascript, que
-          adora criar soluções <b>inovadoras</b> que atendam aos seus propósitos
-          com <b>excelência</b>.
+          <span dangerouslySetInnerHTML={{ __html: t("about-me") }} />
         </p>
         <Link
           href="/about"
           className="mt-8 flex items-center gap-2 text-primary font-bold text-sm"
         >
-          Saiba mais sobre mim
+          {t("more-about-me")}
+          {/* Saiba mais sobre mim */}
           <ArrowRightSvg fill="#5840BA" />
         </Link>
       </div>

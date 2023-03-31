@@ -3,8 +3,10 @@ import { Header } from "@/components/Header";
 import { HomeSection } from "@/components/HomeSection";
 import { ProjectsSections } from "@/components/ProjectsSections";
 import { Footer } from "@/components/Footer";
+import { useTranslation } from "next-i18next";
 
 import { useState } from "react";
+import { withSSRTranslation } from "@/utils/withTranslation";
 // import Image from "next/image";
 // import { Inter } from "next/font/google";
 
@@ -12,6 +14,8 @@ import { useState } from "react";
 
 export default function Home() {
   const [activeLanguage, setActiveLanguage] = useState("pt-br");
+  const { t, i18n } = useTranslation();
+
   return (
     <>
       <Head>
@@ -33,3 +37,5 @@ export default function Home() {
     </>
   );
 }
+
+export const getStaticProps = withSSRTranslation(["common"]);

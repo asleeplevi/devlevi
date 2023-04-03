@@ -2,6 +2,7 @@ import GithubSvg from "@/svg/github";
 import LinkSvg from "@/svg/link";
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslation } from "next-i18next";
 const POSTS = [
   {
     id: 1,
@@ -22,9 +23,11 @@ const POSTS = [
 ];
 
 export const ProjectsSections = () => {
+  const { t } = useTranslation();
+
   return (
-    <div className="container max-w-3xl px-4 mt-40">
-      <h4 className="text-sm font-bold text-grey">Meus projetos</h4>
+    <div className="container max-w-3xl px-4 mt-40 relative">
+      <h4 className="text-sm font-bold text-grey">{t("projects")}</h4>
       <ul className=" mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 gap-y-8">
         {POSTS.map((post) => (
           <li

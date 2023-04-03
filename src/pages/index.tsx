@@ -1,17 +1,13 @@
 import Head from "next/head";
-import { Header } from "@/components/Header";
 import { HomeSection } from "@/components/HomeSection";
 import { ProjectsSections } from "@/components/ProjectsSections";
-import { Footer } from "@/components/Footer";
-
-import { useState } from "react";
+import { withSSRTranslation } from "@/utils/withTranslation";
 // import Image from "next/image";
 // import { Inter } from "next/font/google";
 
 // const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-  const [activeLanguage, setActiveLanguage] = useState("pt-br");
   return (
     <>
       <Head>
@@ -21,15 +17,15 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Header activeLanguage={activeLanguage} />
         <section className="relative">
           <HomeSection />
         </section>
         <section className="bg-main pb-60">
           <ProjectsSections />
         </section>
-        <Footer />
       </main>
     </>
   );
 }
+
+export const getStaticProps = withSSRTranslation(["common"]);

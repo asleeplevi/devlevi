@@ -87,22 +87,14 @@ export const HomeSection = () => {
               className="flex gap-4 items-center justify-between"
             >
               <div className="flex items-center gap-4">
-                <Image
-                  src={link.icon}
-                  alt="linkedin icon"
-                  width={20}
-                  height={20}
-                />
+                <div className="w-5 h-5 relative">
+                  <Image src={link.icon} alt={`${link.title} icon`} fill />
+                </div>
                 <p>{link.title}</p>
               </div>
               <div className="flex items-center gap-4">
-                <button>
-                  <Image
-                    src="/copy.svg"
-                    alt="linkedin icon"
-                    width={16}
-                    height={16}
-                  />
+                <button className="w-4 h-4 relative">
+                  <Image src="/copy.svg" alt="linkedin icon" fill />
                 </button>
                 <Link href={link.url} target="_blank">
                   <LinkSvg

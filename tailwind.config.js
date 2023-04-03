@@ -6,12 +6,18 @@ module.exports = {
       center: true,
     },
     extend: {
+      transitionTimingFunction: {
+        spring: 'cubic-bezier(0.43,-0.26, 0.49, 1.32)'
+      },
       fontSize: {
         '2xs': '0.65rem',
         '3xs': '0.55rem',
 
       },
       colors: {
+        background: {
+          DEFAULT: '#110E11'
+        },
         primary: {
           DEFAULT: '#5840BA'
         },

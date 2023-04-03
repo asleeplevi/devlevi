@@ -62,7 +62,7 @@ export const HomeSection = () => {
         </p>
         <Link
           href="/about"
-          className="mt-8 flex items-center gap-2 text-primary font-bold text-sm"
+          className="mt-8 flex items-center gap-2 text-primary font-bold text-sm w-fit"
         >
           {t("more-about-me")}
           <ArrowRightSvg fill="#5840BA" />

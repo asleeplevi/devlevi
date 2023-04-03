@@ -7,8 +7,8 @@ export default function About() {
   const { t } = useTranslation();
   return (
     <main>
-      <div className="w-full max-w-3xl mx-auto relative">
-        <section className="article w-full h-full bg-main border border-grey rounded-lg p-8 mb-8">
+      <div className="w-full max-w-3xl mx-auto relative px-1 md:px-0">
+        <section className="article w-full h-full bg-main border border-grey rounded-lg p-4 md:p-8 mb-8">
           <header className="mb-2">
             <Link
               href="/"

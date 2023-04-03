@@ -2,12 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer base {
   .article h2 {
     @apply font-bold text-2xl my-5;
   }
-
 
   .article h4 {
     @apply font-bold text-lg my-2;
@@ -15,5 +13,15 @@
 
   .article p {
     @apply my-2 text-sm;
+  }
+
+  button, a{
+    @apply outline-custom
+  }
+}
+
+@layer components {
+  .outline-custom {
+    @apply outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background;
   }
 }

@@ -59,12 +59,12 @@ export const ProjectsSections = () => {
                 <Link
                   href={post.github}
                   target="_blank"
-                  className="bg-white/20 rounded-full flex items-center justify-center w-[45px] h-[45px]"
+                  className="transition-all bg-white/20 hover:bg-primary rounded-full flex items-center justify-center w-[45px] h-[45px] group/link"
                 >
                   <GithubSvg
                     width={25}
                     height={25}
-                    className="relative -left-[1px]"
+                    className="transition-all group-hover/link:scale-110 relative -left-[1px]"
                   />
                 </Link>
               )}
@@ -72,9 +72,13 @@ export const ProjectsSections = () => {
                 <Link
                   href={post.preview}
                   target="_blank"
-                  className="bg-white/20 rounded-full flex items-center justify-center w-[45px] h-[45px] rotate-45"
+                  className="transition-all bg-white/20 hover:bg-primary rounded-full flex items-center justify-center w-[45px] h-[45px] rotate-45 group/link"
                 >
-                  <LinkSvg width={25} height={25} />
+                  <LinkSvg
+                    width={25}
+                    height={25}
+                    className="transition-all group-hover/link:scale-110"
+                  />
                 </Link>
               )}
             </div>

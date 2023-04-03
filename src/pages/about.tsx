@@ -1,5 +1,3 @@
-import { Footer } from "@/components/Footer";
-import { Header } from "@/components/Header";
 import ArrowRightSvg from "@/svg/arrowRight";
 import { withSSRTranslation } from "@/utils/withTranslation";
 import Link from "next/link";
@@ -9,8 +7,6 @@ export default function About() {
   const { t } = useTranslation();
   return (
     <main>
-      <Header activeLanguage={"pt-br"} />
-
       <div className="w-full max-w-3xl mx-auto relative">
         <section className="article w-full h-full bg-main border border-grey rounded-lg p-8 mb-8">
           <header className="mb-2">
@@ -27,7 +23,6 @@ export default function About() {
           <div dangerouslySetInnerHTML={{ __html: t("about") }} />
         </section>
       </div>
-      <Footer />
     </main>
   );
 }

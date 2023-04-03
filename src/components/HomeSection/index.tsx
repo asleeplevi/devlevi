@@ -65,7 +65,6 @@ export const HomeSection = () => {
           className="mt-8 flex items-center gap-2 text-primary font-bold text-sm"
         >
           {t("more-about-me")}
-          {/* Saiba mais sobre mim */}
           <ArrowRightSvg fill="#5840BA" />
         </Link>
       </div>

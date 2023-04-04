@@ -3,33 +3,28 @@ import LinkSvg from "@/svg/link";
 import Image from "next/image";
 import Link from "next/link";
 import { useTranslation } from "next-i18next";
-const POSTS = [
-  {
-    id: 1,
-    title: "Blue Marble",
-    tags: ["Next.js", "Three.js"],
-    image: "/project--bm-landing-page.jpg",
-    preview: "https://bluemarble.com.br",
-  },
 
-  {
-    id: 2,
-    title: "Ignews",
-    tags: ["Next.js", "Stripe", "Prismic"],
-    image: "/project--ignews.jpg",
-    github: "https://github.com/asleeplevi/ignews",
-    preview: "https://ignews-two-rouge.vercel.app/",
-  },
-];
+type Posts = {
+  id: number;
+  title: string;
+  tags: string[];
+  image: string;
+  preview?: string;
+  github?: string;
+};
 
-export const ProjectsSections = () => {
+type ProjectsSectionsProps = {
+  posts: Posts[];
+};
+
+export const ProjectsSections = ({ posts }: ProjectsSectionsProps) => {
   const { t } = useTranslation();
 
   return (
     <div className="container max-w-3xl px-4 mt-40 relative">
       <h4 className="text-sm font-bold text-grey">{t("projects")}</h4>
       <ul className=" mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 gap-y-8">
-        {POSTS.map((post) => (
+        {posts.map((post) => (
           <li
             key={post.id}
             className="group w-full h-[260px] bg-grey-500 rounded-lg relative overflow-hidden"
@@ -42,7 +37,7 @@ export const ProjectsSections = () => {
             />
             <footer className="w-full h-[156px] absolute bottom-0 bg-[linear-gradient(to_top,rgba(0,0,0,.9),rgba(0,0,0,0))] flex flex-col justify-end px-3 pb-3">
               <h5 className="mb-2  text-lg font-bold">{post.title}</h5>
-              <ul className="flex gap-2">
+              <ul className="flex gap-2 flex-wrap">
                 {post.tags.map((tag) => (
                   <li
                     key={tag}

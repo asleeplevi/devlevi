@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "title": "Blue Marble",
+    "tags": [
+      "Next.js",
+      "Typescript",
+      "Three.js",
+      "Sass"
+    ],
+    "image": "/projects/bm-landing-page.jpg",
+    "preview": "https://bluemarble.com.br"
+  },
+  {
+    "id": 2,
+    "title": "Ignews",
+    "tags": [
+      "Next.js",
+      "Typescript",
+      "Stripe",
+      "Prismic",
+      "FaunaDB",
+      "Sass"
+    ],
+    "image": "/projects/ignews.jpg",
+    "github": "https://github.com/asleeplevi/ignews",
+    "preview": "https://ignews-two-rouge.vercel.app/"
+  },
+  {
+    "id": 3,
+    "title": "Doom Fire Algorithm",
+    "tags": [
+      "React",
+      "Typescript",
+      "Canvas"
+    ],
+    "image": "/projects/doom-fire-algorithm.gif",
+    "github": "https://github.com/asleeplevi/doom-fire-algorithm",
+    "preview": "https://doom-fire-algorithm.vercel.app/"
+  },
+  {
+    "id": 4,
+    "title": "Habit Tracker",
+    "tags": [
+      "React",
+      "Typescript",
+      "Tailwind",
+      "i18next",
+      "Fastify",
+      "Prisma",
+      "Zod"
+    ],
+    "image": "/projects/habit-tracker.png",
+    "github": "https://github.com/asleeplevi/habit-tracker"
+  }
+]

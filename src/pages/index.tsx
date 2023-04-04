@@ -2,12 +2,15 @@ import Head from "next/head";
 import { HomeSection } from "@/components/HomeSection";
 import { ProjectsSections } from "@/components/ProjectsSections";
 import { withSSRTranslation } from "@/utils/withTranslation";
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
+import { cwd } from "node:process";
 // import Image from "next/image";
 // import { Inter } from "next/font/google";
 
 // const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
+export default function Home({ posts }: Record<string, any>) {
   return (
     <>
       <Head>
@@ -21,11 +24,21 @@ export default function Home() {
           <HomeSection />
         </section>
         <section className="bg-main pb-60">
-          <ProjectsSections />
+          <ProjectsSections posts={posts} />
         </section>
       </main>
     </>
   );
 }
 
-export const getStaticProps = withSSRTranslation(["common"]);
+export const getStaticProps = withSSRTranslation(["common"], async () => {
+  const projects = await readFile(join(cwd(), "public", "projects.json"), {
+    encoding: "utf-8",
+  });
+  const posts = JSON.parse(projects);
+  return {
+    props: {
+      posts,
+    },
+  };
+});

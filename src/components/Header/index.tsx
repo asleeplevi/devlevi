@@ -18,7 +18,7 @@ export const Header = () => {
   };
 
   return (
-    <header className="w-full flex justify-between items-center container py-8 max-w-3xl relative">
+    <header className="w-full flex justify-between items-center container pt-4 md:py-8 max-w-3xl relative">
       <LogoSvg stroke="white" className="w-5" />
       <div className="flex items-center gap-4 relative">
         {/* <div */}

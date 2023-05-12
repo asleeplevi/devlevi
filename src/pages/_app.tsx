@@ -10,7 +10,7 @@ function App({ Component, pageProps }: AppProps) {
       <div className="min-h-screen  flex flex-col">
         <Header />
         <Component {...pageProps} />
-        {/* <Footer /> */}
+        <Footer />
       </div>
     </>
   );

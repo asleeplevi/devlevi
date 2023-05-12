@@ -1,6 +1,4 @@
 import Head from "next/head";
-import { HomeSection } from "@/components/HomeSection";
-import { ProjectsSections } from "@/components/ProjectsSections";
 import { withSSRTranslation } from "@/utils/withTranslation";
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
@@ -21,12 +19,9 @@ export default function Home({ posts }: Record<string, any>) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="flex-1 flex">
-        <section className="flex flex-1  flex-col md:flex-row items-center container gap-4 max-w-3xl relative">
+        <section className="flex flex-1  flex-col md:flex-row pt-4 container gap-4 max-w-3xl relative">
           <Terminal posts={posts} />
         </section>
-        {/* <section className="bg-main pb-60"> */}
-        {/*   <ProjectsSections posts={posts} /> */}
-        {/* </section> */}
       </main>
     </>
   );

@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export const Footer = () => {
   return (
-    <footer className="flex bg-main mb-16">
+    <footer className="flex py-4 relative">
       <ul className="mx-auto flex items-center gap-8">
         <li>
           <Link href="https://linkedin.com/in/levi-me" target="_blank">
@@ -19,17 +19,17 @@ export const Footer = () => {
           <Link href="https://github.com/asleeplevi" target="_blank">
             <Image
               src="/github.svg"
-              alt="linkedin icon"
+              alt="github icon"
               width={24}
               height={24}
             />
           </Link>
         </li>
         <li>
-          <Link href="mailto:contato@devlevi.com" target="_blank">
+          <Link href="mailto:jlevicarvalho@gmail.com" target="_blank">
             <Image
               src="/email.svg"
-              alt="linkedin icon"
+              alt="email icon"
               width={24}
               height={24}
             />

@@ -1,13 +1,13 @@
 import clsx from "clsx"
+import * as Dialog from '@radix-ui/react-dialog';
 import { useMemo } from "react"
-import { useLayoutEffect } from "react"
 import { useEffect, KeyboardEvent, useRef, useState } from "react"
 import { ProjectsSections } from "../ProjectsSections"
 
 const WELCOME = [
   {
     type: 'response',
-    content: 'Welcome to devlevi 0.0.2 LTS (Next.js/Vercel 13.2.4-next tailwindcss)'
+    content: 'Bem vindo ao devlevi 0.0.2 LTS (Next.js/Vercel 13.2.4-next tailwindcss)'
   },
   {
     type: 'response',
@@ -20,6 +20,10 @@ const WELCOME = [
   {
     type: 'response',
     content: '<p>* Linkedin:  <a href="https://www.linkedin.com/in/levi-me/">https://www.linkedin.com/in/levi-me/</a></p>'
+  },
+  {
+    type: 'response',
+    content: '<p>* Email:  <a href="mailto:jlevicarvalho@gmail.com">jlevicarvalho@gmail.com</a></p>'
   },
   {
     type: 'response',
@@ -86,7 +90,7 @@ const DATA = [
   }
 ]
 
-const DIR_FILES = '<b>matrix.sh   projects.sh  aboutme.sh</b>'
+const DIR_FILES = '<b>matrix.sh   projetos.sh  sobre-mim.sh</b>'
 
 const availableCommands = {
   ls:
@@ -106,25 +110,31 @@ const availableCommands = {
     ]
   ,
   'matrix.sh': DATA,
-  'projects.sh': [
+  'projetos.sh': [
     {
       type: 'response',
-      content: 'There are my projects',
+      content: 'Carregando projetos...',
       modal: 'projects'
     }
   ],
-  'aboutme.sh': [
+  'curriculo.sh': [
     {
       type: 'response',
-      content: '<p>Hello 🖖</p>',
+      content: '<p>Você pode acessar meu currículo <b><a href="/levi-carvalho-curriculo.pdf" target="_blank">clicando aqui</a></p></b>',
+    },
+  ],
+  'sobre-mim.sh': [
+    {
+      type: 'response',
+      content: '<p>Olá 🖖</p>',
     },
     {
       type: 'response',
-      content: "<p>I'm Levi</p>",
+      content: "<p>Eu sou Levi</p>",
     },
     {
       type: 'response',
-      content: '<p>A fullstack developer in love with the Javascript universe, who loves to create innovative solutions that serve his purposes with excellence.</p>',
+      content: '<p>Um desenvolvedor <b>fullstack</b> apaixonado pelo universo do Javascript, que adora criar soluções inovadoras que atendam aos seus propósitos com <b>excelência.</b></p>',
     }
   ]
 }
@@ -155,6 +165,7 @@ export const Terminal = ({ posts }: any) => {
         await new Promise(resolve => setTimeout(resolve, 200))
       }
       if (content.modal) {
+        await new Promise(resolve => setTimeout(resolve, 200))
         setModal(content.modal)
       }
       setDisplayText('')
@@ -223,7 +234,7 @@ export const Terminal = ({ posts }: any) => {
 
   }
   const suggestions = useMemo(() => {
-    if (text.length < 1) return Object.keys(availableCommands).filter(command => command.endsWith('.sh'))
+    if (text.length < 1) return Object.keys(availableCommands).filter(command => command.endsWith('.sh') && !command.includes('matrix'))
     return Object.keys(availableCommands).filter(command => command.includes(text))
   }, [text])
 
@@ -240,7 +251,7 @@ export const Terminal = ({ posts }: any) => {
   }, [previousContent, displayText])
 
   const firstUpdate = useRef(true);
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (typeof window === 'undefined') return
     if (firstUpdate.current === true) updateContent(WELCOME as any)
     firstUpdate.current = false
@@ -296,7 +307,17 @@ export const Terminal = ({ posts }: any) => {
             </button>
           ))}
         </div>
-        <ProjectsSections posts={posts} />
+        <Dialog.Root open={modal === 'projects'} onOpenChange={open => setModal(open ? 'projects' : '')}>
+          <Dialog.Portal>
+            {/* <Dialog.Overlay className='w-full h-full fixed left-0 top-0 bg-[linear-gradient(to_top,rgba(15,14,17,.5),rgba(15,14,17,.1))] backdrop-blur-sm' /> */}
+            <Dialog.Content className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl border border-gray-700 rounded-lg bg-[linear-gradient(to_top,rgba(15,14,17,1),rgba(15,14,17,.5))] backdrop-blur-lg">
+              <Dialog.Title>
+              </Dialog.Title>
+              <ProjectsSections posts={posts} />
+              <Dialog.Close />
+            </Dialog.Content>
+          </Dialog.Portal>
+        </Dialog.Root>
       </main>
     </div>
   )

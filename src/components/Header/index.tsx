@@ -4,7 +4,8 @@ import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
 import { useState } from "react";
 
-const DEFAULT_LANGUAGES = ["en", "pt"];
+// const DEFAULT_LANGUAGES = ["en", "pt"];
+const DEFAULT_LANGUAGES: string[] = [];
 
 export const Header = () => {
   const [index, setIndex] = useState(0);
@@ -17,13 +18,13 @@ export const Header = () => {
   };
 
   return (
-    <header className="w-full flex justify-between items-center container px-4 py-8 max-w-3xl relative">
+    <header className="w-full flex justify-between items-center container py-8 max-w-3xl relative">
       <LogoSvg stroke="white" className="w-5" />
       <div className="flex items-center gap-4 relative">
-        <div
-          className="w-7 h-6 absolute bg-white/20 transition-all ease-spring rounded -translate-x-[4px]"
-          style={{ left: 20 * index + 16 * index }}
-        />
+        {/* <div */}
+        {/*   className="w-7 h-6 absolute bg-white/20 transition-all ease-spring rounded -translate-x-[4px]" */}
+        {/*   style={{ left: 20 * index + 16 * index }} */}
+        {/* /> */}
         {DEFAULT_LANGUAGES.map((lang) => (
           <button
             key={lang}

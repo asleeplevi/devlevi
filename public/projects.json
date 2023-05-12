@@ -9,7 +9,10 @@
       "Sass"
     ],
     "image": "/projects/bm-landing-page.jpg",
-    "preview": "https://bluemarble.com.br"
+    "preview": "https://bluemarble.com.br",
+    "filters": [
+      "frontend"
+    ]
   },
   {
     "id": 2,
@@ -24,7 +27,11 @@
     ],
     "image": "/projects/ignews.jpg",
     "github": "https://github.com/asleeplevi/ignews",
-    "preview": "https://ignews-two-rouge.vercel.app/"
+    "preview": "https://ignews-two-rouge.vercel.app/",
+    "filters": [
+      "frontend",
+      "backend"
+    ]
   },
   {
     "id": 3,
@@ -36,7 +43,10 @@
     ],
     "image": "/projects/doom-fire-algorithm.gif",
     "github": "https://github.com/asleeplevi/doom-fire-algorithm",
-    "preview": "https://doom-fire-algorithm.vercel.app/"
+    "preview": "https://doom-fire-algorithm.vercel.app/",
+    "filters": [
+      "frontend"
+    ]
   },
   {
     "id": 4,
@@ -51,6 +61,10 @@
       "Zod"
     ],
     "image": "/projects/habit-tracker.png",
-    "github": "https://github.com/asleeplevi/habit-tracker"
+    "github": "https://github.com/asleeplevi/habit-tracker",
+    "filters": [
+      "frontend",
+      "backend"
+    ]
   }
 ]

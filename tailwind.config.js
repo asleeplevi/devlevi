@@ -16,7 +16,7 @@ module.exports = {
       },
       colors: {
         background: {
-          DEFAULT: '#110E11'
+          DEFAULT: '#0F0E11'
         },
         primary: {
           DEFAULT: '#5840BA'
@@ -30,13 +30,18 @@ module.exports = {
         'grid-movement': {
           from: { backgroundPositionX: '39px', backgroundPositionY: '39px' },
           to: { backgroundPositionX: '0px', backgroundPositionY: '0px' }
+        },
+        cursor: {
+          from: { opacity: 0 },
+          to: { opacity: 1 }
         }
       },
       animation: {
-        grid: 'grid-movement linear infinite 2s'
+        grid: 'grid-movement linear infinite 2s',
+        cursor: 'cursor ease infinite 500ms',
       },
       backgroundColor: {
-        main: '#110E11'
+        main: '#0F0E11'
       },
     },
   },

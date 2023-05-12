@@ -5,6 +5,7 @@ import { withSSRTranslation } from "@/utils/withTranslation";
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { cwd } from "node:process";
+import { Terminal } from "@/components/Terminal";
 // import Image from "next/image";
 // import { Inter } from "next/font/google";
 
@@ -19,13 +20,13 @@ export default function Home({ posts }: Record<string, any>) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
-        <section className="relative">
-          <HomeSection />
+      <main className="flex-1 flex">
+        <section className="flex flex-1  flex-col md:flex-row items-center container gap-4 max-w-3xl relative">
+          <Terminal posts={posts} />
         </section>
-        <section className="bg-main pb-60">
-          <ProjectsSections posts={posts} />
-        </section>
+        {/* <section className="bg-main pb-60"> */}
+        {/*   <ProjectsSections posts={posts} /> */}
+        {/* </section> */}
       </main>
     </>
   );

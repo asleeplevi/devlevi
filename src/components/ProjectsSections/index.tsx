@@ -24,13 +24,26 @@ type ProjectsSectionsProps = {
 
 export const ProjectsSections = ({ posts }: ProjectsSectionsProps) => {
   const { t } = useTranslation();
+  const [search, setSearch] = useState('')
   const [activeFilter, setActiveFilter] = useState('')
 
-  const filteredPosts = posts.filter(post => !activeFilter ? true : post.filters?.includes(activeFilter))
+  const filteredPosts = posts.filter(post => {
+    let satisfiesFilters = true
+    let satisfiesSearch = true
+    if (activeFilter) satisfiesFilters = post.filters?.includes(activeFilter)
+    if (search) satisfiesSearch = post.title.toLowerCase().includes(search.toLowerCase())
+
+    return satisfiesFilters && satisfiesSearch
+
+  })
   return (
     <div className="px-4">
       <div className="flex justify-center">
-        <input placeholder="Type to search" className="focus:outline-primary outline-none max-w-lg bg-gray-800 w-full rounded border-none h-8 pl-4 mt-4" />
+        <input
+          value={search}
+          onChange={({ target }) => setSearch(target.value)}
+          placeholder="Type to search"
+          className="focus:outline-primary outline-none max-w-lg bg-gray-800 w-full rounded border-none h-8 pl-4 mt-4" />
       </div>
       <ul className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 gap-y-8 h-[60vh] overflow-y-scroll px-4">
         {filteredPosts.map((post) => (

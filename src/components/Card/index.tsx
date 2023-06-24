@@ -20,11 +20,11 @@ export const Card = () => {
             />
           </div>
           <div className="flex my-8 gap-2">
-            <button className="w-full px-4 py-2 border border-gray-100 rounded flex gap-2 items-center hover:border-gray-100 hover:bg-gray-100 hover:text-black group transition-all">
+            <button className="w-full md:w-auto px-4 py-2 border border-gray-100 rounded flex gap-2 items-center hover:border-gray-100 hover:bg-gray-100 hover:text-black group transition-all">
               <PersonSvg className="fill-gray-100 group-hover:fill-black" />
               {t("my-resume")}
             </button>
-            <button className="w-full px-4 py-2 border border-gray-100 rounded flex gap-2 items-center hover:border-gray-100 hover:bg-gray-100 hover:text-black group transition-all">
+            <button className="w-full md:w-auto px-4 py-2 border border-gray-100 rounded flex gap-2 items-center hover:border-gray-100 hover:bg-gray-100 hover:text-black group transition-all">
               <ProjectsSvg className="fill-gray-100 group-hover:fill-black" />
               {t("projects")}
             </button>

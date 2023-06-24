@@ -4,6 +4,7 @@ import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { cwd } from "node:process";
 import { Terminal } from "@/components/Terminal";
+import { Card } from "@/components/Card";
 // import Image from "next/image";
 // import { Inter } from "next/font/google";
 
@@ -19,8 +20,8 @@ export default function Home({ posts }: Record<string, any>) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="flex-1 flex">
-        <section className="flex flex-1  flex-col md:flex-row pt-4 container gap-4 max-w-3xl relative">
-          <Terminal posts={posts} />
+        <section className="flex flex-1 pt-[5%] px-4 md:px-0 flex-col md:flex-row container gap-4 max-w-3xl relative">
+          <Card />
         </section>
       </main>
     </>

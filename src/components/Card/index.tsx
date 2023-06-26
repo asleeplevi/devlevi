@@ -2,9 +2,11 @@ import Image from "next/image";
 import { useTranslation } from "next-i18next";
 import ProjectsSvg from "@/svg/projects";
 import PersonSvg from "@/svg/person";
+import Link from "next/link";
 
 export const Card = () => {
   const { t } = useTranslation();
+
   return (
     <div className="relative md:h-fit h-full w-full">
       <div className="w-[130px] h-[130px] bg-[#5840BA] opacity-60 absolute left-0 top-0 blur-3xl" />
@@ -20,11 +22,19 @@ export const Card = () => {
             />
           </div>
           <div className="flex my-8 gap-2">
-            <button className="w-full md:w-auto px-4 py-2 border border-gray-100 rounded flex gap-2 items-center hover:border-gray-100 hover:bg-gray-100 hover:text-black group transition-all">
-              <PersonSvg className="fill-gray-100 group-hover:fill-black" />
-              {t("my-resume")}
-            </button>
-            <button className="w-full md:w-auto px-4 py-2 border border-gray-100 rounded flex gap-2 items-center hover:border-gray-100 hover:bg-gray-100 hover:text-black group transition-all">
+            <Link
+              href={t("resume-url") || "/levi-carvalho-curriculo.pdf"}
+              target="_blank"
+            >
+              <button className="w-full md:w-auto px-4 py-2 border border-gray-100 rounded flex gap-2 items-center hover:border-gray-100 hover:bg-gray-100 hover:text-black group transition-all">
+                <PersonSvg className="fill-gray-100 group-hover:fill-black" />
+                {t("my-resume")}
+              </button>
+            </Link>
+            <button
+              disabled
+              className="w-full md:w-auto px-4 py-2 border border-gray-100 rounded flex gap-2 items-center hover:border-gray-100 hover:bg-gray-100 hover:text-black group transition-all disabled:opacity-40 disabled:cursor-not-allowed"
+            >
               <ProjectsSvg className="fill-gray-100 group-hover:fill-black" />
               {t("projects")}
             </button>

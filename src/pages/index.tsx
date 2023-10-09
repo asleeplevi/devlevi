@@ -1,16 +1,12 @@
 import Head from "next/head";
 import { withSSRTranslation } from "@/utils/withTranslation";
-import { readFile } from "node:fs/promises";
-import { join } from "node:path";
-import { cwd } from "node:process";
-import { Terminal } from "@/components/Terminal";
 import { Card } from "@/components/Card";
-// import Image from "next/image";
-// import { Inter } from "next/font/google";
+import { Inter } from "next/font/google";
+import clsx from "clsx";
 
-// const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"] });
 
-export default function Home({ posts }: Record<string, any>) {
+export default function Home() {
   return (
     <>
       <Head>
@@ -19,7 +15,7 @@ export default function Home({ posts }: Record<string, any>) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="flex-1 flex">
+      <main className={clsx("flex-1 flex", inter.className)}>
         <section className="flex flex-1 pt-[5%] px-4 md:px-0 flex-col md:flex-row container gap-4 max-w-3xl relative">
           <Card />
         </section>
@@ -29,13 +25,7 @@ export default function Home({ posts }: Record<string, any>) {
 }
 
 export const getStaticProps = withSSRTranslation(["common"], async () => {
-  const projects = await readFile(join(cwd(), "public", "projects.json"), {
-    encoding: "utf-8",
-  });
-  const posts = JSON.parse(projects);
   return {
-    props: {
-      posts,
-    },
+    props: {},
   };
 });

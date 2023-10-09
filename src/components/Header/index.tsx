@@ -18,10 +18,10 @@ export const Header = () => {
 
   return (
     <header className="w-full flex justify-between items-center container px-4 md:px-0 pt-8 md:py-8 max-w-3xl relative">
-      <LogoSvg stroke="white" className="w-5" />
+      <LogoSvg stroke="grey" className="w-5" />
       <div className="flex items-center gap-4 relative">
         <div
-          className="w-7 h-6 absolute bg-white/20 transition-all ease-spring rounded -translate-x-[4px]"
+          className="w-7 h-6 absolute bg-[#7D40BA]/20 transition-all ease-spring rounded -translate-x-[4px]"
           style={{ left: 20 * index + 16 * index }}
         />
         {DEFAULT_LANGUAGES.map((lang) => (
@@ -30,8 +30,8 @@ export const Header = () => {
             className={clsx(
               "w-5 h-5 text-sm text-grey outline-custom rounded-sm",
               {
-                "text-white": i18n.language === lang,
-              }
+                "font-bold": i18n.language === lang,
+              },
             )}
             onClick={() => onChangeLang(lang)}
           >

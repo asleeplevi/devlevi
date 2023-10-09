@@ -17,9 +17,10 @@
     @apply my-2 text-sm;
   }
 
-  button, a{
+  button, a, li{
     @apply outline-custom
   }
+
 
   /* Firefox */
   * {
@@ -42,7 +43,7 @@
 
 @layer components {
   .outline-custom {
-    @apply outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background;
+    @apply outline-none focus-visible:outline-none focus-visible:rounded focus:ring-2  focus:ring-primary focus:ring-offset-2 focus:ring-offset-background;
   }
 }
 

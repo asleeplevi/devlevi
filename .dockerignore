@@ -1,0 +1,11 @@
+node_modules
+
+.next
+.vercel
+.gitignore
+.git
+
+
+docker
+.dockerignore
+Dockerfile

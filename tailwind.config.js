@@ -7,44 +7,42 @@ module.exports = {
     },
     extend: {
       transitionTimingFunction: {
-        spring: 'cubic-bezier(0.43,-0.26, 0.49, 1.32)'
+        spring: "cubic-bezier(0.43,-0.26, 0.49, 1.32)",
       },
       fontSize: {
-        '2xs': '0.65rem',
-        '3xs': '0.55rem',
-
+        "2xs": "0.65rem",
+        "3xs": "0.55rem",
       },
       colors: {
         background: {
-          DEFAULT: '#0F0E11'
+          DEFAULT: "#E4E1ED",
         },
         primary: {
-          DEFAULT: '#5840BA'
+          DEFAULT: "#5840BA",
         },
         grey: {
-          DEFAULT: '#7A787A',
-          500: '#1F191F'
-        }
+          DEFAULT: "#7A787A",
+          500: "#444444",
+        },
       },
       keyframes: {
-        'grid-movement': {
-          from: { backgroundPositionX: '39px', backgroundPositionY: '39px' },
-          to: { backgroundPositionX: '0px', backgroundPositionY: '0px' }
+        "grid-movement": {
+          from: { backgroundPositionX: "39px", backgroundPositionY: "39px" },
+          to: { backgroundPositionX: "0px", backgroundPositionY: "0px" },
         },
         cursor: {
           from: { opacity: 0 },
-          to: { opacity: 1 }
-        }
+          to: { opacity: 1 },
+        },
       },
       animation: {
-        grid: 'grid-movement linear infinite 2s',
-        cursor: 'cursor ease infinite 500ms',
+        grid: "grid-movement linear infinite 2s",
+        cursor: "cursor ease infinite 500ms",
       },
       backgroundColor: {
-        main: '#0F0E11'
+        main: "#E4E1ED",
       },
     },
   },
-  plugins: [
-  ],
-}
+  plugins: [],
+};

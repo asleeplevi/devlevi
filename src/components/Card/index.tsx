@@ -1,16 +1,13 @@
 import Image from "next/image";
 import { useTranslation } from "next-i18next";
 import Link from "next/link";
-
-const RESUME_URL = {
-  pt: "/levi-carvalho-curriculo.pdf",
-  en: "/en/levi-carvalho-resume.pdf",
-};
+import { APP_CONSTANTS } from "@/utils/constants";
 
 export const Card = () => {
   const { t, i18n } = useTranslation();
 
-  const CURRRENT_LANGUAGE = (i18n.language as "pt") || "en";
+  const CURRRENT_LANGUAGE = (i18n.language as "PT") || "EN";
+
   return (
     <div className="relative h-full w-full text-center">
       <div className="w-[130px] h-[130px] bg-[#93BEFF] absolute left-0 top-0 blur-3xl" />
@@ -30,7 +27,7 @@ export const Card = () => {
           <ul className="flex items-center gap-8">
             <li>
               <Link
-                href="https://linkedin.com/in/levi-me"
+                href={APP_CONSTANTS.SOCIAL.LINKEDIN}
                 target="_blank"
                 className="block"
               >
@@ -44,7 +41,7 @@ export const Card = () => {
             </li>
             <li>
               <Link
-                href="https://github.com/asleeplevi"
+                href={APP_CONSTANTS.SOCIAL.GITHUB}
                 target="_blank"
                 className="block"
               >
@@ -58,7 +55,7 @@ export const Card = () => {
             </li>
             <li>
               <Link
-                href="mailto:jlevicarvalho@gmail.com"
+                href={`mailto:${APP_CONSTANTS.SOCIAL.EMAIL}`}
                 target="_blank"
                 className="block"
               >
@@ -72,7 +69,11 @@ export const Card = () => {
             </li>
             <li>
               <Link
-                href={RESUME_URL[CURRRENT_LANGUAGE]}
+                href={
+                  APP_CONSTANTS.RESUME_URL[
+                    CURRRENT_LANGUAGE.toLocaleUpperCase() as "PT"
+                  ]
+                }
                 target="_blank"
                 className="block"
               >

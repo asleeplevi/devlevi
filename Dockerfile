@@ -17,6 +17,8 @@ RUN npm ci
 
 FROM base as builder
 
+ENV NEXT_TELEMETRY_DISABLED 1
+
 WORKDIR /app
 
 COPY --from=deps /app/node_modules ./node_modules
@@ -26,11 +28,14 @@ RUN npm run build
 
 FROM base AS runner
 
-WORKDIR /app
+WORKDIR /build
 
-COPY --from=deps /app/node_modules ./node_modules
+# Copy only nexti18 dependencies 
+COPY --from=deps /app/node_modules/next-i18next ./node_modules/next-i18next
+COPY --from=deps /app/node_modules/core-js ./node_modules/core-js
+
+# Copy only next build files
 COPY --from=builder /app/public ./public
-
 COPY --from=builder /app/.next/standalone ./
 COPY --from=builder /app/.next/static ./.next/static
 

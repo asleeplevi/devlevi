@@ -8,6 +8,8 @@ services:
     ports:
       - 3000:3000
     container_name: 'devlevi'
+    stdin_open: true
+    tty: true
     networks:
       - projects
     volumes:

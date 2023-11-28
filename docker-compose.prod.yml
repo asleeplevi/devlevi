@@ -7,6 +7,9 @@ services:
     ports:
       - 3000:3000
     container_name: 'devlevi-prod'
+    restart: always
+    stdin_open: true
+    tty: true
     networks:
         - projects
 networks: 

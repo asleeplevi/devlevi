@@ -8,21 +8,75 @@ services:
     ports:
       - 3000:3000
     container_name: 'devlevi'
+    restart: unless-stopped
     stdin_open: true
     tty: true
     networks:
-      - projects
+      - strapi
     volumes:
       - ./:/app
       - node_modules:/app/node_modules
     command: npm run dev
+  strapi:
+    container_name: devlevi-strapi
+    build: 
+      context: ./cms
+      dockerfile: ./Dockerfile
+    env_file: ./.env
+    environment:
+      API_TOKEN_SALT: ${API_TOKEN_SALT}
+      PORT: ${PORT}
+      TRANSFER_TOKEN_SALT: ${TRANSFER_TOKEN_SALT}
+      DATABASE_HOST: ${DATABASE_HOST}
+      DATABASE_CLIENT: ${DATABASE_CLIENT}
+      DATABASE_PORT: ${DATABASE_PORT}
+      DATABASE_NAME: ${DATABASE_NAME}
+      DATABASE_USERNAME: ${DATABASE_USERNAME}
+      DATABASE_PASSWORD: ${DATABASE_PASSWORD}
+      JWT_SECRET: ${JWT_SECRET}
+      ADMIN_JWT_SECRET: ${ADMIN_JWT_SECRET}
+      APP_KEYS: ${APP_KEYS}
+      NODE_ENV: ${NODE_ENV}
+    volumes:
+      - ./cms:/opt/app
+      - node_modules_strapi:/opt/node_modules
+    ports:
+      - "1337:1337"
+    networks:
+      - strapi
+    depends_on:
+      - strapiDB
+  strapiDB:
+    container_name: strapiDB
+    restart: unless-stopped
+    env_file: ./.env
+    image: mariadb:latest
+    environment:
+      MYSQL_USER: ${DATABASE_USERNAME}
+      MYSQL_ROOT_PASSWORD: ${DATABASE_PASSWORD}
+      MYSQL_PASSWORD: ${DATABASE_PASSWORD}
+      MYSQL_DATABASE: ${DATABASE_NAME}
+    volumes:
+      - strapi-data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    networks:
+      - strapi
 networks:
-  projects:
+  strapi:
+    name: Strapi
     driver: bridge
 volumes:
+  strapi-data:
   node_modules:
     driver: local
     driver_opts:
       type: none
       o: bind
       device: ./node_modules
+  node_modules_strapi:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: ./cms/node_modules

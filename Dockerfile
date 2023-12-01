@@ -6,7 +6,7 @@ WORKDIR /app
 
 ENV NEXT_TELEMETRY_DISABLED 1
 
-COPY --chown=node:node package*.json ./
+COPY package*.json ./
 
 RUN npm ci
 

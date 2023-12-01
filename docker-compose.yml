@@ -40,7 +40,7 @@ services:
       NODE_ENV: ${NODE_ENV}
     volumes:
       - ./cms:/opt/app
-      - node_modules_strapi:/opt/node_modules
+      - node_modules_strapi:/opt/app/node_modules
     ports:
       - "1337:1337"
     networks:

@@ -12,11 +12,7 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Category": {
-      "type": "string",
-      "required": false
-    },
-    "Thumbnail": {
+    "thumbnail": {
       "type": "media",
       "multiple": false,
       "required": false,
@@ -24,8 +20,17 @@
         "images"
       ]
     },
-    "Description": {
+    "description": {
       "type": "text"
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::category.category",
+      "mappedBy": "names"
+    },
+    "name": {
+      "type": "string"
     }
   }
 }

@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_testing_test_components",
+  "info": {
+    "displayName": "Test component",
+    "icon": "briefcase"
+  },
+  "options": {},
+  "attributes": {
+    "Category": {
+      "type": "string"
+    }
+  },
+  "__filename__": "test-component.json"
+}

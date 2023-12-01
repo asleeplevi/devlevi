@@ -68,13 +68,13 @@ networks:
     name: Strapi
     driver: bridge
 volumes:
-  strapi-data:
   node_modules:
     driver: local
     driver_opts:
       type: none
       o: bind
       device: ./node_modules
+  strapi-data:
   node_modules_strapi:
     driver: local
     driver_opts:

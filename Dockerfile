@@ -4,15 +4,16 @@ FROM base as deps
 
 WORKDIR /app
 
+COPY --chown=node:node package*.json ./
+
 ENV NEXT_TELEMETRY_DISABLED 1
 
-COPY package*.json ./
-
-RUN npm ci
-
-RUN chown node:node -R /app
+RUN mkdir -p node_modules
+RUN mkdir -p .next
+RUN chown node:node . node_modules .next
 
 USER node
+RUN npm ci
 
 FROM base as builder
 

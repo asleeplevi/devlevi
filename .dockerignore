@@ -1,10 +1,10 @@
-./node_modules
-./cms/node_modules
+node_modules
 
 .next
 .vercel
 .gitignore
 .git
+
 
 docker
 .dockerignore
